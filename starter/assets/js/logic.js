@@ -54,14 +54,19 @@ var currentQuestion = quizQuestions[index];
 questionTitleEl.textContent = currentQuestion.question; 
 questionChoicesEl.innerHTML = ""; // This done to  clear the previous question in the DOM
 
+// The is looping through the current question and answer choices and to dispaly answerChoices in an order list 
+for (let i = 0; i < currentQuestion.answerChoices.length; i++) {
+    var answerChoices = document.createElement("button");
+    answerChoices.textContent = currentQuestion.answerChoices[i]
+    questionChoicesEl.appendChild(answerChoices)
 
+    // adding an event lister to the button created 
+    answerChoices.addEventListener("click", displayQuestion);
 
+    console.log("You click choice ") // checking to see if the click button work
 }
 
-
-
-
-
+}
 
 // This code is set to display a timer on the page 
 // Start the timer 
@@ -74,6 +79,18 @@ function countDown(){
     // Decrement timer is shown to the user
     timeRemaining--;
     timeEl.textContent = timeRemaining;
+
+    // The if statement to stop the quiz after time is <=0
+    // If available reaches 0 or less stop the quiz
+    if (timeRemaining <= 0){
+        stopQuiz();
+    }
+}
+
+
+// The function to stop the quiz 
+function stopQuiz(){
+// To be completed 
     
 }
 
