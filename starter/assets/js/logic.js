@@ -3,6 +3,11 @@
 // Declaring variable to get element by ID 
 var startScreenEl = document.getElementById("start-screen"); // connected to line 18 in html
 var questionsEl = document.getElementById("questions"); // connected to line 28 in html
+var questionTitleEl = document.getElementById("question-title"); // connected to line 29 in html
+var questionChoicesEl = document.getElementById("choices"); // connected to line 30 in html
+var timeEl = document.getElementById("time"); // connected to line 15 in html
+
+
 
 // Creating a start button with a query selector, declaring variable with var startButton
 // The line of code is using query selector to select the start Id linked
@@ -18,10 +23,12 @@ function startQuiz (){
 
     console.log("click startQuiz Button") // console log the check if its working 
 
-// Hide the start screen. It used to hide the welcome text so that the quiz can start when the start Quiz button is click
+// Hide the start screen. Set an Attribute to hide the display text at welcome screen
+// It used to hide the welcome text so that the quiz can start when the start Quiz button is click
 startScreenEl.setAttribute("class", "hide");// this is also referencing line 18 by set the attribute class
 
 // Unhide and show the questions 
 questionsEl.removeAttribute("class");
+
 
 }
