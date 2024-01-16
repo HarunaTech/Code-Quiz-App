@@ -35,7 +35,9 @@ questionsEl.removeAttribute("class");
 
 // Delcaring function to display the questions 
 // calling display fucntion (commit 4)
-var index= 0;
+var index = 0;
+var timerId;
+var timeRemaining = 135;
 displayQuestion();
 
 // function where current question will be display to the user 
@@ -47,9 +49,22 @@ var currentQuestion = quizQuestions[index];
 // This will display the question as tagerted and display it using questionTitleEl.textContent
 // The .textContent is used to display the content of questionTitleEl as it was reference above and line 28 in html
 
-questionTitleEl.textContent=currentQuestion.question; 
-questionChoicesEl.innerHTML=""; // This done to  clear the previous question in the DOM
+questionTitleEl.textContent = currentQuestion.question; 
+questionChoicesEl.innerHTML = ""; // This done to  clear the previous question in the DOM
 
+// This code is set to display a timer on the page 
+// Start the timer 
+timerId = setInterval(countDown, 1000); // every 1000ms it will call CountDown
+timeEl.textContent = timeRemaining; // it is used to get time Id class in line 15 html and display
+
+
+// A call back fuction that will call the countDown function every 1000 miliseconds
+function countDown(){
+    // Decrement timer is shown to the user
+    timeRemaining--;
+    timeEl.textContent = timeRemaining;
+    
+}
 
 
 }
