@@ -4,29 +4,29 @@
 var quizQuestions = [
     {
         question: "How many javascript data type do we have?",
-        answerChoices: ["4", "3", "2", "1"], // number data type data 
-        answer: "3"
+        answerChoices: ["4", "7", "2", "6"], // number data type data 
+        answer: "7"
 
     },
 
     {
-        question: "question-2",
-        answerChoices: ["A1", "A2", "A3", "A4"], // number data type data 
-        answer: "A1"
+        question: "Where is the correct place to insert a JavaScript?",
+        answerChoices: ["Head section", "Body section", "Title section", "ALl of above"], // number data type data 
+        answer: "Body section"
 
     },
 
     {
-        question: "question-3",
-        answerChoices: ["A1", "A2", "A3", "A4"], // number data type data 
-        answer: "A4"
+        question: "How do you create a function in JavaScript?",
+        answerChoices: ["function = myfunction()", "function myfunction()", "function:myfunction()", "functions=function()"], // number data type data 
+        answer: "function = myfunction()"
 
     },
 
     {
-        question: "question-4",
-        answerChoices: ["A1", "A2", "A3", "A4"], // number data type data 
-        answer: "A2"
+        question: "How do you write (Hello World) in an alert box?",
+        answerChoices: [" msgBox(Hello World)", "msg(Hello World)", "alertmsg(Hello World)", "alert(Hello World)"], // number data type data 
+        answer: "alert(Hello World)"
 
     },
     

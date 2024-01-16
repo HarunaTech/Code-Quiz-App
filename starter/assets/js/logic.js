@@ -7,7 +7,7 @@ var questionsEl = document.getElementById("questions"); // connected to line 28 
 var questionTitleEl = document.getElementById("question-title"); // connected to line 29 in html
 var questionChoicesEl = document.getElementById("choices"); // connected to line 30 in html
 var timeEl = document.getElementById("time"); // connected to line 15 in html
-
+var answerChoices = document.getElementById("choices");
 
 
 // Creating a start button with a query selector, declaring variable with var startButton
@@ -38,6 +38,7 @@ questionsEl.removeAttribute("class");
 var index = 0;
 var timerId;
 var timeRemaining = 135;
+
 displayQuestion();
 
 // function where current question will be display to the user 
@@ -45,12 +46,22 @@ function displayQuestion(){
     // Get the current questions from quiz questions Array (question.js file)
 var currentQuestion = quizQuestions[index]; 
 
+
 // display the question to the user. This get the  
 // This will display the question as tagerted and display it using questionTitleEl.textContent
 // The .textContent is used to display the content of questionTitleEl as it was reference above and line 28 in html
 
 questionTitleEl.textContent = currentQuestion.question; 
 questionChoicesEl.innerHTML = ""; // This done to  clear the previous question in the DOM
+
+
+
+}
+
+
+
+
+
 
 // This code is set to display a timer on the page 
 // Start the timer 
@@ -67,4 +78,3 @@ function countDown(){
 }
 
 
-}
