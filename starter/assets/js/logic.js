@@ -1,5 +1,9 @@
 // The logic code will be written here
 
+// Declaring variable to get element by ID 
+var startScreenEl = document.getElementById("start-screen"); // connected to line 18 in html
+var questionsEl = document.getElementById("questions"); // connected to line 28 in html
+
 // Creating a start button with a query selector, declaring variable with var startButton
 // The line of code is using query selector to select the start Id linked
 // with the hmtl and an event listener is used to create and listen to the button when its clicked
@@ -13,4 +17,11 @@ function startQuiz (){
     alert("Start Quiz");
 
     console.log("click startQuiz Button") // console log the check if its working 
+
+// Hide the start screen. It used to hide the welcome text so that the quiz can start when the start Quiz button is click
+startScreenEl.setAttribute("class", "hide");// this is also referencing line 18 by set the attribute class
+
+// Unhide and show the questions 
+questionsEl.removeAttribute("class");
+
 }
