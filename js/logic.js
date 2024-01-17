@@ -52,7 +52,7 @@ var currentQuestion = quizQuestions[index];
 // The .textContent is used to display the content of questionTitleEl as it was reference above and line 28 in html
 
 questionTitleEl.textContent = currentQuestion.question; 
-questionChoicesEl.innerHTML = ""; // This done to  clear the previous question in the DOM
+questionChoicesEl.innerHTML = ""; // This done to clear the previous question in the DOM
 
 // The is looping through the current question and answer choices and to dispaly answerChoices in an order list 
 for (let i = 0; i < currentQuestion.answerChoices.length; i++) {
@@ -61,7 +61,14 @@ for (let i = 0; i < currentQuestion.answerChoices.length; i++) {
     questionChoicesEl.appendChild(answerChoices)
 
     // adding an event lister to the button created 
-    answerChoices.addEventListener("click", displayQuestion);
+    answerChoices.addEventListener("click", function(){
+        index++                                        // this will continue to loop through the next question and answer 
+        if (index < currentQuestion.answerChoices.length){
+            displayQuestion();                            // Display the next question and else return( i.e end the quiz)
+        } else {
+            return;
+        }
+    });
 
     console.log("You click choice ") // checking to see if the click button work
 }
