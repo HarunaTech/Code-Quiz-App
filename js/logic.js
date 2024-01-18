@@ -7,7 +7,7 @@ var questionsEl = document.getElementById("questions"); // connected to line 28 
 var questionTitleEl = document.getElementById("question-title"); // connected to line 29 in html
 var questionChoicesEl = document.getElementById("choices"); // connected to line 30 in html
 var timeEl = document.getElementById("time"); // connected to line 15 in html
-var answerChoices = document.getElementById("choices");
+// var answerChoices = document.getElementById("choices");
 
 
 // Creating a start button with a query selector, declaring variable with var startButton
@@ -22,7 +22,7 @@ startButton.addEventListener("click", startQuiz); // added  event listener to th
 function startQuiz (){
     alert("Start Quiz");
 
-    console.log("click startQuiz Button") // console log the check if its working 
+    console.log("You click the startQuiz Button") // console log the check if its working 
 
 // Hide the start screen. Set an Attribute to hide the display text at welcome screen
 // It used to hide the welcome text so that the quiz can start when the start Quiz button is click
@@ -30,6 +30,7 @@ startScreenEl.setAttribute("class", "hide");// this is also referencing line 18 
 
 // Unhide and show the questions 
 questionsEl.removeAttribute("class");
+displayQuestion();
 
 }
 
@@ -39,12 +40,20 @@ var index = 0;
 var timerId;
 var timeRemaining = 135;
 
-displayQuestion();
+
 
 // function where current question will be display to the user 
 function displayQuestion(){
+
+// This code is set to display a timer on the page 
+// Start the timer 
+timerId = setInterval(countDown, 1000); // every 1000ms it will call CountDown
+timeEl.textContent = timeRemaining; // it is used to get time Id class in line 15 html and display
+
     // Get the current questions from quiz questions Array (question.js file)
 var currentQuestion = quizQuestions[index]; 
+
+
 
 
 // display the question to the user. This get the  
@@ -62,6 +71,7 @@ for (let i = 0; i < currentQuestion.answerChoices.length; i++) {
 
     // adding an event lister to the button created 
     answerChoices.addEventListener("click", function(){
+        
         index++                                        // this will continue to loop through the next question and answer 
         if (index < currentQuestion.answerChoices.length){
             displayQuestion();                            // Display the next question and else return( i.e end the quiz)
@@ -69,16 +79,17 @@ for (let i = 0; i < currentQuestion.answerChoices.length; i++) {
             return;
         }
     });
-
-    console.log("You click choice ") // checking to see if the click button work
+    console.log("You click a button ") // checking to see if the click button work
 }
 
+//
+
 }
 
-// This code is set to display a timer on the page 
+/* // This code is set to display a timer on the page 
 // Start the timer 
 timerId = setInterval(countDown, 1000); // every 1000ms it will call CountDown
-timeEl.textContent = timeRemaining; // it is used to get time Id class in line 15 html and display
+timeEl.textContent = timeRemaining; // it is used to get time Id class in line 15 html and display */
 
 
 // A call back fuction that will call the countDown function every 1000 miliseconds
